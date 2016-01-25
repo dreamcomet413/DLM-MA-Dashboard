@@ -12,6 +12,7 @@ gem 'devise'
 gem 'pg'
 gem 'pundit'
 gem 'therubyracer', :platform=>:ruby
+gem 'nokogiri', '~> 1.6', '>= 1.6.7'
 
 group :development do
   gem 'better_errors'
