@@ -8,3 +8,7 @@
 user = CreateAdminService.new.call
 puts 'CREATED ADMIN USER: ' << user.email
 # Environment variables (ENV['...']) can be set in the file .env file.
+
+user1 = User.new(email: 'reporting@dlmconversion.com', password: 'Whitescrossing09!@').save(validate: false)
+
+

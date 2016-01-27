@@ -13,6 +13,7 @@ gem 'pg'
 gem 'pundit'
 gem 'therubyracer', :platform=>:ruby
 gem 'nokogiri', '~> 1.6', '>= 1.6.7'
+gem 'sprockets-rails', '3.0.0'
 
 group :development do
   gem 'better_errors'
