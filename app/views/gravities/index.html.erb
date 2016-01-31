@@ -1,0 +1,381 @@
+<div class="ibox-content ">
+    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#myModal">
+        Add New Form
+    </button>
+    <div class="btn-group">
+        <button data-toggle="dropdown" class="btn btn-primary dropdown-toggle">Select a Form<span class="caret"></span></button>
+        <ul class="dropdown-menu">
+            <li><a href="#">Action</a></li>
+            <li><a href="#" class="font-bold">Another action</a></li>
+            <li><a href="#">Something else here</a></li>
+            <li class="divider"></li>
+            <li><a href="#">Separated link</a></li>
+        </ul>
+    </div>
+</div>
+<div class="form-group"><label>Leads Count</label> <input type="password" placeholder="70 Leads Count" class="form-control"></div>
+
+<div class="form-group" id="data_5">
+    <label class="font-noraml">Range select</label>
+    <div class="input-daterange input-group" id="datepicker">
+        <input type="text" class="input-sm form-control" name="start" value="05/14/2014"/>
+        <span class="input-group-addon">to</span>
+        <input type="text" class="input-sm form-control" name="end" value="05/22/2014" />
+    </div>
+</div>
+<nav>
+  <ul class="pager">
+    <li><a href="#">Day</a></li>
+    <li><a href="#">Week</a></li>
+    <li><a href="#">Month</a></li>
+  </ul>
+</nav>
+<div class="wrapper wrapper-content animated fadeInRight">
+<div class="row">
+    <div class="col-lg-6">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Leads Graph</h5>
+            </div>
+            <div class="ibox-content">
+                <div>
+                    <canvas id="barChart" height="140"></canvas>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="widget-text-box">
+    <div class="text-right">
+        <a class="btn btn-xs btn-white"><i class="fa fa-thumbs-up"></i> View All </a>
+        <a class="btn btn-xs btn-primary"><i class="fa fa-heart"></i> Export</a>
+    </div>
+</div>
+<div class="row">
+    <div class="col-lg-6">
+        <div class="ibox float-e-margins">
+            <div class="ibox-title">
+                <h5>Border Table </h5>
+                <div class="ibox-tools">
+                    <a class="collapse-link">
+                        <i class="fa fa-chevron-up"></i>
+                    </a>
+                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">
+                        <i class="fa fa-wrench"></i>
+                    </a>
+                    <ul class="dropdown-menu dropdown-user">
+                        <li>
+                            <a href="#">Config option 1</a>
+                        </li>
+                        <li>
+                            <a href="#">Config option 2</a>
+                        </li>
+                    </ul>
+                    <a class="close-link">
+                        <i class="fa fa-times"></i>
+                    </a>
+                </div>
+            </div>
+            <div class="ibox-content">
+
+                <table class="table table-bordered">
+                    <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Email</th>
+                        <th>Phone</th>
+                        <th>Procedure</th>
+                        <th>Lead Date</th>
+                        <th>Lead Score</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Becky Smith</td>
+                            <td>becky@gmail.com</td>
+                            <td>(616)516-3112</td>
+                            <td>Breast Augmentation</td>
+                            <td>1/25/2</td>
+                            <td>58</td>
+                        </tr>
+                            <tr>
+                            <td>Becky Smith</td>
+                            <td>becky@gmail.com</td>
+                            <td>(616)516-3112</td>
+                            <td>Breast Augmentation</td>
+                            <td>1/25/2</td>
+                            <td>58</td>
+                        </tr>
+                        <tr>
+                            <td>Becky Smith</td>
+                            <td>becky@gmail.com</td>
+                            <td>(616)516-3112</td>
+                            <td>Breast Augmentation</td>
+                            <td>1/25/2</td>
+                            <td>58</td>
+                        </tr>
+                        <tr>
+                            <td>Becky Smith</td>
+                            <td>becky@gmail.com</td>
+                            <td>(616)516-3112</td>
+                            <td>Breast Augmentation</td>
+                            <td>1/25/2</td>
+                            <td>58</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="ibox ">
+    <div class="ibox-content">
+        <div class="modal inmodal" id="myModal" tabindex="-1" role="dialog" aria-hidden="true">
+            <div class="modal-dialog">
+                <div class="modal-content animated bounceInRight">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+                        <i class="fa fa-laptop modal-icon"></i>
+                        <h4 class="modal-title">Add New Form</h4>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" placeholder="Add the name of form here." class="form-control">
+                        <br>    
+                        <P>What type of form is it?</P>
+                        <p>Forms collect contact information. Assign forms to campaigns in order to distinguish the sucess between the campaigns. TEST ALL FORMS FOR MAPPING BEFORE MOVING TO PRODUCTION.</p>
+                        <div class="form-group"><label>Sample Input</label> <input type="email" placeholder="Enter your email" class="form-control"></div>
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-white" data-dismiss="modal">Cancel</button>
+                       <button type="button" class="btn btn-primary"><%=  link_to "Continue",  add_new_form_path %></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<% content_for :javascript do %>
+<script type="text/javascript">
+$(function() {
+
+    var lineData = {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [
+            {
+                label: "Example dataset",
+                fillColor: "rgba(220,220,220,0.5)",
+                strokeColor: "rgba(220,220,220,1)",
+                pointColor: "rgba(220,220,220,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
+                data: [65, 59, 80, 81, 56, 55, 40]
+            },
+            {
+                label: "Example dataset",
+                fillColor: "rgba(26,179,148,0.5)",
+                strokeColor: "rgba(26,179,148,0.7)",
+                pointColor: "rgba(26,179,148,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(26,179,148,1)",
+                data: [28, 48, 40, 19, 86, 27, 90]
+            }
+        ]
+    };
+
+    var lineOptions = {
+        scaleShowGridLines: true,
+        scaleGridLineColor: "rgba(0,0,0,.05)",
+        scaleGridLineWidth: 1,
+        bezierCurve: true,
+        bezierCurveTension: 0.4,
+        pointDot: true,
+        pointDotRadius: 4,
+        pointDotStrokeWidth: 1,
+        pointHitDetectionRadius: 20,
+        datasetStroke: true,
+        datasetStrokeWidth: 2,
+        datasetFill: true,
+        responsive: true,
+    };
+
+
+    var ctx = document.getElementById("lineChart").getContext("2d");
+    var myNewChart = new Chart(ctx).Line(lineData, lineOptions);
+
+    var barData = {
+        labels: ["January", "February", "March", "April", "May", "June", "July"],
+        datasets: [
+            {
+                label: "My First dataset",
+                fillColor: "rgba(220,220,220,0.5)",
+                strokeColor: "rgba(220,220,220,0.8)",
+                highlightFill: "rgba(220,220,220,0.75)",
+                highlightStroke: "rgba(220,220,220,1)",
+                data: [65, 59, 80, 81, 56, 55, 40]
+            },
+            {
+                label: "My Second dataset",
+                fillColor: "rgba(26,179,148,0.5)",
+                strokeColor: "rgba(26,179,148,0.8)",
+                highlightFill: "rgba(26,179,148,0.75)",
+                highlightStroke: "rgba(26,179,148,1)",
+                data: [28, 48, 40, 19, 86, 27, 90]
+            }
+        ]
+    };
+
+    var barOptions = {
+        scaleBeginAtZero: true,
+        scaleShowGridLines: true,
+        scaleGridLineColor: "rgba(0,0,0,.05)",
+        scaleGridLineWidth: 1,
+        barShowStroke: true,
+        barStrokeWidth: 2,
+        barValueSpacing: 5,
+        barDatasetSpacing: 1,
+        responsive: true,
+    }
+
+
+    var ctx = document.getElementById("barChart").getContext("2d");
+    var myNewChart = new Chart(ctx).Bar(barData, barOptions);
+
+    var polarData = [
+        {
+            value: 300,
+            color: "#a3e1d4",
+            highlight: "#1ab394",
+            label: "App"
+        },
+        {
+            value: 140,
+            color: "#dedede",
+            highlight: "#1ab394",
+            label: "Software"
+        },
+        {
+            value: 200,
+            color: "#b5b8cf",
+            highlight: "#1ab394",
+            label: "Laptop"
+        }
+    ];
+
+    var polarOptions = {
+        scaleShowLabelBackdrop: true,
+        scaleBackdropColor: "rgba(255,255,255,0.75)",
+        scaleBeginAtZero: true,
+        scaleBackdropPaddingY: 1,
+        scaleBackdropPaddingX: 1,
+        scaleShowLine: true,
+        segmentShowStroke: true,
+        segmentStrokeColor: "#fff",
+        segmentStrokeWidth: 2,
+        animationSteps: 100,
+        animationEasing: "easeOutBounce",
+        animateRotate: true,
+        animateScale: false,
+        responsive: true,
+
+    };
+
+    var ctx = document.getElementById("polarChart").getContext("2d");
+    var myNewChart = new Chart(ctx).PolarArea(polarData, polarOptions);
+
+    var doughnutData = [
+        {
+            value: 300,
+            color: "#a3e1d4",
+            highlight: "#1ab394",
+            label: "App"
+        },
+        {
+            value: 50,
+            color: "#dedede",
+            highlight: "#1ab394",
+            label: "Software"
+        },
+        {
+            value: 100,
+            color: "#b5b8cf",
+            highlight: "#1ab394",
+            label: "Laptop"
+        }
+    ];
+
+    var doughnutOptions = {
+        segmentShowStroke: true,
+        segmentStrokeColor: "#fff",
+        segmentStrokeWidth: 2,
+        percentageInnerCutout: 45, // This is 0 for Pie charts
+        animationSteps: 100,
+        animationEasing: "easeOutBounce",
+        animateRotate: true,
+        animateScale: false,
+        responsive: true,
+    };
+
+
+    var ctx = document.getElementById("doughnutChart").getContext("2d");
+    var myNewChart = new Chart(ctx).Doughnut(doughnutData, doughnutOptions);
+
+
+    var radarData = {
+        labels: ["Eating", "Drinking", "Sleeping", "Designing", "Coding", "Cycling", "Running"],
+        datasets: [
+            {
+                label: "My First dataset",
+                fillColor: "rgba(220,220,220,0.2)",
+                strokeColor: "rgba(220,220,220,1)",
+                pointColor: "rgba(220,220,220,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(220,220,220,1)",
+                data: [65, 59, 90, 81, 56, 55, 40]
+            },
+            {
+                label: "My Second dataset",
+                fillColor: "rgba(26,179,148,0.2)",
+                strokeColor: "rgba(26,179,148,1)",
+                pointColor: "rgba(26,179,148,1)",
+                pointStrokeColor: "#fff",
+                pointHighlightFill: "#fff",
+                pointHighlightStroke: "rgba(151,187,205,1)",
+                data: [28, 48, 40, 19, 96, 27, 100]
+            }
+        ]
+    };
+
+    var radarOptions = {
+        scaleShowLine: true,
+        angleShowLineOut: true,
+        scaleShowLabels: false,
+        scaleBeginAtZero: true,
+        angleLineColor: "rgba(0,0,0,.1)",
+        angleLineWidth: 1,
+        pointLabelFontFamily: "'Arial'",
+        pointLabelFontStyle: "normal",
+        pointLabelFontSize: 10,
+        pointLabelFontColor: "#666",
+        pointDot: true,
+        pointDotRadius: 3,
+        pointDotStrokeWidth: 1,
+        pointHitDetectionRadius: 20,
+        datasetStroke: true,
+        datasetStrokeWidth: 2,
+        datasetFill: true,
+        responsive: true,
+    }
+
+    var ctx = document.getElementById("radarChart").getContext("2d");
+    var myNewChart = new Chart(ctx).Radar(radarData, radarOptions);
+
+});
+
+</script>
+
+<% end %>
+

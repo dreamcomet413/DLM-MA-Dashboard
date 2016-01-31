@@ -1,0 +1,43 @@
+<div class="ibox-content">
+  <input type="text" placeholder="Name of Form" class="form-control">
+</div>
+<div class="ibox-content">
+  <input type="text" placeholder="<h1>How to capture you leads using your own forms</h1>" class="form-control">
+</div>
+<div class="ibox-content">
+  <p>1) Place the code below on your website before the closing </body> tag - OR - after the closing </form> tag for the from to track leads.</p>
+  <br>
+  <div class="row">
+    <div class="ibox ">
+      <div class="ibox-content">
+        <textarea id="code1">
+            <script>
+            // Code goes here
+
+            // For demo purpose - animation css script
+            function animationHover(element, animation) {
+                element = $(element);
+                element.hover(
+                        function () {
+                            element.addClass('animated ' + animation);
+                        },
+                        function () {
+                            //wait for animation to finish before removing classes
+                            window.setTimeout(function () {
+                                element.removeClass('animated ' + animation);
+                            }, 2000);
+                        });
+            }
+            </script>
+        </textarea>
+      </div>
+    </div>
+  </div>
+  <br>
+  <p>2) Fill out the form so that our code can catch on initial form fill out.</p>
+  <br>
+  <p>3) Refresh the page by clicking the button below, and assign the form fields to the lead fileds in DLM.</p>
+  <br>
+  <button type="button" class="btn btn-primary"><%=  link_to "Refresh the Page",  leads_info_path %></button>
+</div>
+
