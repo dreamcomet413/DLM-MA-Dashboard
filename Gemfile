@@ -16,6 +16,7 @@ gem 'nokogiri', '~> 1.6', '>= 1.6.7'
 gem 'sprockets-rails', '3.0.0'
 gem 'puma'
 gem 'foreman'
+gem 'rack-timeout'
 
 group :development do
   gem 'better_errors'
@@ -38,6 +39,7 @@ end
 
 group :production do
   gem 'rails_12factor'
+  gem 'unicorn'
 end
 
 group :test do
