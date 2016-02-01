@@ -14,10 +14,11 @@ gem 'pundit'
 gem 'therubyracer', :platform=>:ruby
 gem 'nokogiri', '~> 1.6', '>= 1.6.7'
 gem 'sprockets-rails', '3.0.0'
+gem 'puma'
+gem 'foreman'
 
 group :development do
   gem 'better_errors'
-  gem 'foreman'
   gem 'quiet_assets'
   gem 'rails_layout'
   gem 'spring-commands-rspec'
