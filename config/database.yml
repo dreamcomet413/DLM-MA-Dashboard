@@ -52,7 +52,7 @@ test:
 
 production:
   adapter:  postgresql
-  host:     localhost
+  host:     https://frozen-mesa-90759.herokuapp.com
   encoding: unicode
   database: DLM-MA-Dashboard_production
   pool:     5
