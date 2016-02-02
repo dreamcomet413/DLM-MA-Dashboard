@@ -17,7 +17,7 @@ gem 'sprockets-rails', '3.0.0'
 gem 'puma'
 gem 'foreman'
 gem 'rack-timeout'
-
+gem 'newrelic_rpm'
 group :development do
   gem 'better_errors'
   gem 'quiet_assets'
