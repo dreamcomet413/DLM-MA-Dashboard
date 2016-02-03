@@ -12,22 +12,59 @@
       <div class="ibox-content">
         <textarea id="code1">
             <script>
-            // Code goes here
+           
+              public function scripts() {
+                $scripts = array(
+                  array(
+                    'handle'  => 'gf_web_api_demo_1',
+                    'src'     => $this->get_base_url() . '/js/gf-web-api-demo-1.js',
+                    'deps'    => array( 'jquery' ),
+                    'version' => $this->_version,
+                    'enqueue' => array(
+                      array( 'query' => 'page=gravityformswebapidemo1' ),
+                    ),
+                    'strings' => array(
+                      'root_url'    => site_url() . '/gravityformsapi/',
+                      'nonce'       => wp_create_nonce( 'gf_api' ),
+                    )
+                  ),
+                );
 
-            // For demo purpose - animation css script
-            function animationHover(element, animation) {
-                element = $(element);
-                element.hover(
-                        function () {
-                            element.addClass('animated ' + animation);
-                        },
-                        function () {
-                            //wait for animation to finish before removing classes
-                            window.setTimeout(function () {
-                                element.removeClass('animated ' + animation);
-                            }, 2000);
-                        });
-            }
+                return array_merge( parent::scripts(), $scripts );
+              }
+
+             $('#submit_button').click(function () {
+                  var url = apiVars['root_url'] + 'forms/' + apiVars['form_id'] +  '/submissions';
+                  submitForm( url );
+              });
+
+              function submitForm(url){
+
+                var inputValues = {
+                    input_1: $('#input_1').val(),
+                    input_2: $('#input_2').val(),
+                    input_3: $('.input_3:checked').val(),
+                    input_4: $('#input_4').val()
+                };
+
+                var data = {
+                    input_values: inputValues
+                };
+
+                $.ajax({
+                    url: url,
+                    type: 'POST',
+                    data: JSON.stringify(data),
+                    beforeSend: function (xhr, opts) {
+                        $sending.show();
+                    }
+                })
+                .done(function (data, textStatus, xhr) {
+                    $sending.hide();
+                    var response = JSON.stringify(data.response, null, '\t');
+                    $results.val(response);
+                })
+              }
             </script>
         </textarea>
       </div>
