@@ -11,61 +11,197 @@
     <div class="ibox ">
       <div class="ibox-content">
         <textarea id="code1">
-            <script>
-           
-              public function scripts() {
-                $scripts = array(
-                  array(
-                    'handle'  => 'gf_web_api_demo_1',
-                    'src'     => $this->get_base_url() . '/js/gf-web-api-demo-1.js',
-                    'deps'    => array( 'jquery' ),
-                    'version' => $this->_version,
-                    'enqueue' => array(
-                      array( 'query' => 'page=gravityformswebapidemo1' ),
-                    ),
-                    'strings' => array(
-                      'root_url'    => site_url() . '/gravityformsapi/',
-                      'nonce'       => wp_create_nonce( 'gf_api' ),
-                    )
-                  ),
-                );
+          <script>
+            //Form Creation
+            var gravityForm = document.getElementById("gravity_form");
+            var createForm = document.createElement('form');
+            createForm.setAttribute("action", "");
+            createForm.setAttribute("method", "post");
+            gravityForm.appendChild(createForm);          
 
-                return array_merge( parent::scripts(), $scripts );
+            //Form title 
+            var heading = document.createElement('h2');
+            heading.innerHTML = "Please visit us!!!";
+            createForm.appendChild(heading);
+
+            //Horizontal row aAfter title
+            var line = document.createElement('hr');
+            createForm.appendChild(line);
+
+            //Line Breaking
+            var linebreak = document.createElement('br');
+            createForm.appendChild(linebreak);
+
+            //Create Label for First Name
+            var firstnameLabel = document.createElement('label');
+            firstnameLabel.innerHTML = "First Name : ";
+            createForm.appendChild(firstnameLabel);
+
+            // Create Input Field for First Name
+            var firstnameElement = document.createElement('input'); 
+            firstnameElement.setAttribute("type", "text");
+            firstnameElement.setAttribute("name", "firstname");
+            firstnameElement.setAttribute("id", "firstname");
+            createForm.appendChild(firstnameElement);
+
+            //FirstName Breaking
+            var fnbreak = document.createElement('br');
+            createForm.appendChild(fnbreak);
+
+            //Create Label for Last Name
+            var lastnameLabel = document.createElement('label');
+            lastnameLabel.innerHTML = "Last Name : ";
+            createForm.appendChild(lastnameLabel);
+
+            // Create Input Field for Last Name
+            var lastnameElement = document.createElement('input'); 
+            lastnameElement.setAttribute("type", "text");
+            lastnameElement.setAttribute("name", "lastname");
+            firstnameElement.setAttribute("id", "lastname");
+            createForm.appendChild(lastnameElement);
+
+            //LastName Breaking
+            var lnbreak = document.createElement('br');
+            createForm.appendChild(lnbreak);
+
+            //Create Label for Interest Procedure
+            var ipLabel = document.createElement('label');
+            ipLabel.innerHTML = "Procedure of Interest : ";
+            createForm.appendChild(ipLabel);
+
+            // Create Input Field for Interest Procedure
+            var ipElement = document.createElement('input'); 
+            ipElement.setAttribute("type", "text");
+            ipElement.setAttribute("name", "interestprocedure");
+            createForm.appendChild(ipElement);
+
+            //Procedure Breaking
+            var probreak = document.createElement('br');
+            createform.appendChild(probreak);
+
+            // Create Label for E-mail Field
+            var emaillabel = document.createElement('label');
+            emaillabel.innerHTML = "Email : ";
+            createform.appendChild(emaillabel);
+
+            // Create Input Field for E-mail
+            var emailelement = document.createElement('input');
+            emailelement.setAttribute("type", "text");
+            emailelement.setAttribute("name", "email");
+            createform.appendChild(emailelement);
+
+            //Email Breaking
+            var emailbreak = document.createElement('br');
+            createForm.appendChild(emailbreak);
+
+            //Create Label for Phone
+            var phoneLabel = document.createElement('label');
+            phoneLabel.innerHTML = "Phone : ";
+            createForm.appendChild(phoneLabel);
+
+            // Create Input Field for Phone
+            var phoneElement = document.createElement('input'); 
+            phoneElement.setAttribute("type", "text");
+            phoneElement.setAttribute("name", "phone");
+            createForm.appendChild(phoneElement);
+
+            //Phone Breaking
+            var phonebreak = document.createElement('br');
+            createForm.appendChild(phonebreak);
+
+            //Create Label for Comments
+            var commentLabel = document.createElement('label');
+            commentLabel.innerHTML = "Comments : ";
+            createForm.appendChild(commentLabel);
+
+            // Create Input Field for Comments
+            var commentElement = document.createElement('input'); 
+            commentElement.setAttribute("type", "text");
+            commentElement.setAttribute("name", "comments");
+            createForm.appendChild(commentElement);
+
+            //Comments Breaking
+            var commentbreak = document.createElement('br');
+            createForm.appendChild(commentbreak);
+
+            //Create Label for Doctor Requested
+            var drLabel = document.createElement('label');
+            drLabel.innerHTML = "Doctor Requested : ";
+            createForm.appendChild(drLabel);
+
+            // Create Input Field for Doctor Requested
+            var drElement = document.createElement('input'); 
+            drElement.setAttribute("type", "text");
+            drElement.setAttribute("name", "doctorRequested");
+            createForm.appendChild(drElement);
+
+            //Doctor Breaking
+            var doctorbreak = document.createElement('br');
+            createForm.appendChild(doctorbreak);
+
+            //Create Label for Consultation Date
+            var cdLabel = document.createElement('label');
+            cdLabel.innerHTML = "Consultation Date : ";
+            createForm.appendChild(cdLabel);
+
+            // Create Input Field for Consultation Date
+            var cdElement = document.createElement('input'); 
+            cdElement.setAttribute("type", "text");
+            cdElement.setAttribute("name", "consultationDate");
+            createForm.appendChild(cdElement);
+
+            //Ling Breaking
+            var linebreak = document.createElement('br');
+            createForm.appendChild(linebreak);
+
+            //Create Label for Surgery Date
+            var sgLabel = document.createElement('label');
+            sgLabel.innerHTML = "Surgery Date : ";
+            createForm.appendChild(sgLabel);
+
+            // Create Input Field for Surgery Date
+            var sgElement = document.createElement('input'); 
+            sgElement.setAttribute("type", "text");
+            sgElement.setAttribute("name", "surgeryDate");
+            createForm.appendChild(sgElement);
+
+            var surgerybreak = document.createElement('br');
+            createform.appendChild(surgerybreak);
+
+            var submitelement = document.createElement('input'); // Append Submit Button
+            submitelement.setAttribute("type", "submit");
+            submitelement.setAttribute("name", "submit");
+            submitelement.setAttribute("value", "Submit");
+            createform.appendChild(submitelement);
+
+            function validation(){
+              var firstname = document.getElementById("firstname").value;
+              var lastname = document.getElementById("lastname").value;
+              var email = document.getElementById("email").value;
+              var emailReg = /^([w-.]+@([w-]+.)+[w-]{2,4})?$/;
+              if( firstname ==='' || lastname ==='' || email ===''){
+              alert("Please fill all fields...!!!!!!");
+              return false;
+              }else if(!(email).match(emailReg)){
+              alert("Invalid Email...!!!!!!");
+              return false;
+              }else{
+              return true;
               }
+            }
 
-             $('#submit_button').click(function () {
-                  var url = apiVars['root_url'] + 'forms/' + apiVars['form_id'] +  '/submissions';
-                  submitForm( url );
-              });
-
-              function submitForm(url){
-
-                var inputValues = {
-                    input_1: $('#input_1').val(),
-                    input_2: $('#input_2').val(),
-                    input_3: $('.input_3:checked').val(),
-                    input_4: $('#input_4').val()
-                };
-
-                var data = {
-                    input_values: inputValues
-                };
-
-                $.ajax({
-                    url: url,
-                    type: 'POST',
-                    data: JSON.stringify(data),
-                    beforeSend: function (xhr, opts) {
-                        $sending.show();
-                    }
-                })
-                .done(function (data, textStatus, xhr) {
-                    $sending.hide();
-                    var response = JSON.stringify(data.response, null, '\t');
-                    $results.val(response);
-                })
+            function submit_by_id() {
+              var name = document.getElementById("name").value;
+              var email = document.getElementById("email").value;
+              if (validation()) // Calling validation function
+              {
+              document.getElementByName("submit").submit(); //form submission
+              alert(" Name : " + name + " \n Email : " + email + " \n Form Id : " + document.getElementById("submit").getAttribute("id") + "\n\n Form Submitted Successfully......");
               }
-            </script>
+            }
+
+          </script>
+          </textarea>
         </textarea>
       </div>
     </div>
@@ -77,4 +213,3 @@
   <br>
   <button type="button" class="btn btn-primary"><%=  link_to "Refresh the Page",  leads_info_path %></button>
 </div>
-
