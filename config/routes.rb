@@ -5,6 +5,9 @@ Rails.application.routes.draw do
   get "add_new_form" => "gravities#add_form"
   get "leads_info" => "gravities#leads_info"
 
+  resources :gravities
+  resources :leads
+
   devise_scope :user do
     get "signup", to: "devise/registrations#new"
     get "signin", to: "devise/sessions#new"
