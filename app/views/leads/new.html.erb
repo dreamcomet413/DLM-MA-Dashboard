@@ -1,0 +1,12 @@
+<%= form_for(Lead.new)  do |f| %>
+  First name: <%= f.text_field :first_name %><br />
+  Last name : <%= f.text_field :last_name %><br />
+  Interest Procedure : <%= f.text_field :interest_procedure %><br />
+  Email : <%= f.text_field :email %><br />
+  Phone : <%= f.text_field :phone %><br />
+  Comments : <%= f.text_field :comment %><br />
+  Doctor : <%= f.text_field :doctor %><br />
+  Consultation Date : <%= f.text_field :consultation_date %><br />
+  Sugery Date : <%= f.text_field :sugery_date %><br />
+  <%= f.submit %>
+<% end %>
